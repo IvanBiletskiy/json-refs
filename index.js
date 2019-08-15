@@ -241,9 +241,9 @@ function isRefLike (obj, throwWithDetails) {
 
 function makeAbsolute (location) {
   if (location.indexOf('://') === -1 && !path.isAbsolute(location)) {
-    return path.resolve(process.cwd(), location);
+    return slash(path.resolve(process.cwd(), location));
   } else {
-    return location;
+    return slash(location);
   }
 }
 
